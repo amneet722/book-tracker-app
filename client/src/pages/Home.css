@@ -1,0 +1,260 @@
+/* client/src/pages/Home.css */
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  width: 100%;
+  padding: 5rem 2rem; /* More vertical padding */
+  /* LIGHT MODE GRADIENT */
+  background: linear-gradient(135deg, var(--primary-color) 0%, #6dd5ed 100%); /* Blue gradient */
+  color: white; /* White text for contrast */
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px; /* Minimum height for hero */
+  transition: background 0.5s ease; /* Smooth transition for gradient */
+}
+
+/* DARK MODE HERO SECTION OVERRIDE */
+body.dark .hero-section {
+  /* A darker, more subtle gradient for dark mode */
+  background: linear-gradient(135deg, var(--navbar-bg) 0%, var(--bg-light) 100%); /* Deep blue/charcoal gradient */
+  /* Or use a simple solid dark color if you prefer */
+  /* background-color: var(--navbar-bg); */
+}
+
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3.5rem; /* Larger title */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.05em; /* Tighter letter spacing */
+}
+
+.hero-subtitle {
+  font-size: 1.5rem; /* Larger subtitle */
+  margin-bottom: 2.5rem;
+  line-height: 1.5;
+  font-weight: 300; /* Lighter weight for subtitle */
+  color: rgba(255, 255, 255, 0.9); /* Slightly muted white */
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  gap: 1.5rem; /* Spacing between buttons */
+}
+
+.hero-buttons .btn {
+  padding: 1rem 2.5rem; /* Larger buttons */
+  font-size: 1.1rem;
+  border-radius: 50px; /* Pill-shaped buttons */
+  font-weight: 600;
+}
+
+.hero-buttons .primary-btn {
+  background-color: var(--secondary-color); /* Use secondary color for primary action */
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for main button */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.hero-buttons .primary-btn:hover {
+  background-color: var(--secondary-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* DARK MODE HERO BUTTON OVERRIDES */
+body.dark .hero-buttons .primary-btn {
+  background-color: var(--primary-color); /* This will be the dark mode purple */
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .hero-buttons .primary-btn:hover {
+  background-color: var(--primary-hover-color); /* Darker purple on hover */
+}
+
+
+.hero-buttons .secondary-btn.already-account { /* Specific style for "Already have account" */
+  background-color: transparent;
+  border: 2px solid white; /* White border */
+  color: white;
+  box-shadow: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-buttons .secondary-btn.already-account:hover {
+  background-color: rgba(255, 255, 255, 0.15); /* Subtle background on hover */
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* DARK MODE "Already have an account?" button override */
+body.dark .hero-buttons .secondary-btn.already-account {
+  border-color: rgba(255, 255, 255, 0.6); /* Slightly less opaque white border */
+  color: rgba(255, 255, 255, 0.9); /* Slightly muted white text */
+}
+
+body.dark .hero-buttons .secondary-btn.already-account:hover {
+  background-color: rgba(255, 255, 255, 0.08); /* Even subtler background on hover */
+}
+
+
+/* Features Section Styles (should already handle dark mode via variables) */
+.features-section {
+  width: 100%;
+  padding: 4rem 2rem; /* Consistent padding */
+  background-color: var(--bg-light); /* Light background */
+  text-align: center;
+}
+
+.features-title {
+  font-size: 2.5rem; /* Larger heading */
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 3rem; /* More space below title */
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 2rem; /* Spacing between cards */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background-color: var(--bg-extra-light); /* White background for cards */
+  padding: 2.5rem 1.5rem; /* Generous padding */
+  border-radius: 12px;
+  box-shadow: 0 5px 20px var(--shadow-color); /* More pronounced shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* Spacing within card */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 280px; /* Ensure consistent card height */
+}
+
+.feature-card:hover {
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  font-size: 3.5rem; /* Larger icon */
+  margin-bottom: 0.8rem;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color); /* Highlight feature title */
+  margin-bottom: 0.8rem;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
+/* Call to Action Section (Optional) */
+.call-to-action-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  background-color: var(--bg-extra-light); /* Match card background for softness */
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  padding: 1.2rem 3rem; /* Even larger button */
+  font-size: 1.2rem;
+  border-radius: 50px;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.cta-button:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 1.5rem;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  .hero-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+  }
+  .hero-buttons .btn {
+    width: 100%; /* Full width for stacked buttons */
+    max-width: 300px; /* Max width for stacked buttons */
+  }
+
+  .features-section {
+    padding: 3rem 1.5rem;
+  }
+  .features-title {
+    font-size: 2rem;
+  }
+  .feature-card {
+    padding: 2rem 1rem;
+  }
+  .feature-icon {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 3rem 1rem;
+    min-height: 350px;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .features-section {
+    padding: 2rem 1rem;
+  }
+  .features-title {
+    font-size: 1.8rem;
+  }
+  .feature-card {
+    min-height: unset; /* Allow height to adjust */
+  }
+}

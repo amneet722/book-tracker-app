@@ -1,0 +1,101 @@
+/* client/src/Auth.css */
+
+.auth-container {
+  max-width: 450px; /* Slightly wider */
+  margin: 4rem auto; /* Keep centered */
+  background-color: var(--bg-extra-light); /* Use variable for white/dark background */
+  padding: 2.5rem 2rem; /* More padding */
+  border-radius: 12px; /* Consistent rounded corners */
+  box-shadow: 0 8px 30px var(--shadow-color); /* Stronger, softer shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for dark mode */
+  border: 1px solid var(--border-color); /* Subtle border */
+}
+
+.auth-container h2 {
+  margin-bottom: 2rem; /* More space below heading */
+  text-align: center;
+  color: var(--text-dark); /* Use variable for text color */
+  font-size: 2rem; /* Larger heading */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Form Grouping for better spacing and labels */
+.auth-form-group {
+  margin-bottom: 1.2rem; /* Consistent spacing between input groups */
+}
+
+.auth-form-group label {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-medium); /* Use variable */
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+/* Apply app.css input styles - these should already be working via global input rules */
+.auth-container input {
+  width: 100%;
+  padding: 0.8rem; /* Slightly more padding for inputs */
+  /* Remove margin-bottom here, use auth-form-group for spacing */
+  border: 1px solid var(--border-color); /* Use variable */
+  border-radius: 8px; /* Consistent rounding */
+  background-color: var(--bg-extra-light); /* Ensure input background matches */
+  color: var(--text-dark); /* Ensure input text color is dark */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-container input:focus {
+  outline: none;
+  border-color: var(--primary-color); /* Use variable for focus */
+  box-shadow: 0 0 0 3px rgba(var(--primary-color), 0.2); /* Softer shadow */
+}
+
+/* Apply app.css button styles - these should already be working via global btn classes */
+.auth-container .auth-submit-btn { /* Specific class for submit button */
+  width: 100%;
+  padding: 0.9rem; /* Larger button */
+  background-color: var(--primary-color); /* Use primary color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem; /* Larger font */
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.auth-container .auth-submit-btn:hover {
+  background-color: var(--primary-hover-color); /* Use hover color */
+  transform: translateY(-1px);
+}
+
+.auth-container p {
+  margin-top: 1.5rem; /* More space above message */
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-medium); /* Use variable */
+}
+
+.auth-container p a {
+  color: var(--primary-color); /* Use primary color for links */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.auth-container p a:hover {
+  color: var(--primary-hover-color);
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .auth-container {
+    margin: 2rem 1rem; /* Reduce margin on small screens */
+    padding: 2rem 1.5rem;
+  }
+  .auth-container h2 {
+    font-size: 1.8rem;
+  }
+}

@@ -1,0 +1,23 @@
+
+
+# Logs
+*.log
+
+# System
+.DS_Store
+Thumbs.db
+
+# Node.js
+node_modules/
+dist/
+npm-debug.log
+.env
+.DS_Store
+
+# React (Client-side)
+client/node_modules/
+client/build/ # This is your compiled React app
+
+# Server-side (Node.js)
+server/node_modules/
+server/.env # If you have a separate .env for server

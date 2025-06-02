@@ -1,0 +1,78 @@
+/* Add to Dashboard.css or a new ReadingGoals.css */
+
+.reading-goals-stats-container {
+  /* This is the container for both goals and stats */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.goal-input-section {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.goal-input-section label {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+}
+
+.goal-input-section .goal-input {
+  width: 70px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  background-color: var(--bg-extra-light);
+  color: var(--text-dark);
+  margin-left: 0.5rem;
+}
+
+.charts-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allow charts to wrap */
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.chart-card {
+  background: var(--bg-extra-light);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px var(--shadow-color);
+  flex: 1;
+  min-width: 300px; /* Ensure charts have enough space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Distribute space */
+  gap: 1rem;
+}
+
+.chart-card h3 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  font-size: 1.5rem;
+}
+
+.chart-card .chart-info {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-medium);
+}
+
+/* For Recharts labels/text (if needed to override default colors) */
+.recharts-text.recharts-pie-label-text,
+.recharts-legend-item-text {
+  fill: var(--text-dark) !important; /* Force text color for charts */
+}
+
+@media (max-width: 768px) {
+  .charts-wrapper {
+    flex-direction: column;
+  }
+}

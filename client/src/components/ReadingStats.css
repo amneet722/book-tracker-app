@@ -1,0 +1,18 @@
+/* Add to Dashboard.css or a new ReadingStats.css */
+
+.reading-stats-chart {
+  background: var(--bg-extra-light);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  width: 100%;
+  max-width: 1000px; /* Adjust as needed */
+  text-align: center;
+}
+
+.reading-stats-chart .stats-chart-title {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
