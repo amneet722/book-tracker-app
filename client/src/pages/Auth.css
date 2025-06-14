@@ -1,84 +1,78 @@
-/* client/src/Auth.css */
-
 .auth-container {
-  max-width: 450px; /* Slightly wider */
-  margin: 4rem auto; /* Keep centered */
-  background-color: var(--bg-extra-light); /* Use variable for white/dark background */
-  padding: 2.5rem 2rem; /* More padding */
-  border-radius: 12px; /* Consistent rounded corners */
-  box-shadow: 0 8px 30px var(--shadow-color); /* Stronger, softer shadow */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for dark mode */
-  border: 1px solid var(--border-color); /* Subtle border */
+  max-width: 450px;
+  margin: 4rem auto;
+  background-color: var(--bg-extra-light);
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px var(--shadow-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
 }
 
 .auth-container h2 {
-  margin-bottom: 2rem; /* More space below heading */
+  margin-bottom: 2rem;
   text-align: center;
-  color: var(--text-dark); /* Use variable for text color */
-  font-size: 2rem; /* Larger heading */
+  color: var(--text-dark);
+  font-size: 2rem; 
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
-/* Form Grouping for better spacing and labels */
 .auth-form-group {
-  margin-bottom: 1.2rem; /* Consistent spacing between input groups */
+  margin-bottom: 1.2rem;
 }
 
 .auth-form-group label {
   display: block;
   font-size: 0.95rem;
-  color: var(--text-medium); /* Use variable */
+  color: var(--text-medium);
   margin-bottom: 0.4rem;
   font-weight: 500;
 }
 
-/* Apply app.css input styles - these should already be working via global input rules */
 .auth-container input {
   width: 100%;
-  padding: 0.8rem; /* Slightly more padding for inputs */
-  /* Remove margin-bottom here, use auth-form-group for spacing */
-  border: 1px solid var(--border-color); /* Use variable */
-  border-radius: 8px; /* Consistent rounding */
-  background-color: var(--bg-extra-light); /* Ensure input background matches */
-  color: var(--text-dark); /* Ensure input text color is dark */
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-extra-light);
+  color: var(--text-dark);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .auth-container input:focus {
   outline: none;
-  border-color: var(--primary-color); /* Use variable for focus */
-  box-shadow: 0 0 0 3px rgba(var(--primary-color), 0.2); /* Softer shadow */
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(var(--primary-color), 0.2);
 }
 
-/* Apply app.css button styles - these should already be working via global btn classes */
-.auth-container .auth-submit-btn { /* Specific class for submit button */
+.auth-container .auth-submit-btn {
   width: 100%;
-  padding: 0.9rem; /* Larger button */
-  background-color: var(--primary-color); /* Use primary color */
+  padding: 0.9rem;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 1.1rem; /* Larger font */
+  font-size: 1.1rem;
   font-weight: 600;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .auth-container .auth-submit-btn:hover {
-  background-color: var(--primary-hover-color); /* Use hover color */
+  background-color: var(--primary-hover-color);
   transform: translateY(-1px);
 }
 
 .auth-container p {
-  margin-top: 1.5rem; /* More space above message */
+  margin-top: 1.5rem;
   text-align: center;
   font-size: 0.95rem;
-  color: var(--text-medium); /* Use variable */
+  color: var(--text-medium);
 }
 
 .auth-container p a {
-  color: var(--primary-color); /* Use primary color for links */
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s ease;
@@ -89,10 +83,9 @@
   text-decoration: underline;
 }
 
-/* Responsive adjustments */
 @media (max-width: 500px) {
   .auth-container {
-    margin: 2rem 1rem; /* Reduce margin on small screens */
+    margin: 2rem 1rem;
     padding: 2rem 1.5rem;
   }
   .auth-container h2 {

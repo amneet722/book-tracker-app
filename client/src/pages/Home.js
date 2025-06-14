@@ -1,7 +1,6 @@
-// client/src/pages/Home.js
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link
-import './Home.css'; // Make sure you have this import
+import { Link } from 'react-router-dom';
+import './Home.css';
 
 function Home() {
   return (
@@ -17,7 +16,7 @@ function Home() {
             <Link to="/register" className="btn primary-btn">
               Get Started - It's Free!
             </Link>
-            <Link to="/login" className="btn secondary-btn already-account"> {/* Added already-account class */}
+            <Link to="/login" className="btn secondary-btn already-account">
               Already have an account?
             </Link>
           </div>
@@ -58,7 +57,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Optional: Call to Action Section */}
       <section className="call-to-action-section">
         <h2 className="cta-title">Ready to Start Your Reading Journey?</h2>
         <Link to="/register" className="btn primary-btn cta-button">

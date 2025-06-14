@@ -1,5 +1,5 @@
 import React from 'react';
-import './BookCard.css'; // Make sure this is imported
+import './BookCard.css';
 
 function BookCard({ book, onDelete, onEdit }) {
   return (
@@ -10,9 +10,9 @@ function BookCard({ book, onDelete, onEdit }) {
       {book.rating && <p><strong>Rating:</strong> ⭐ {book.rating}/5</p>}
       {book.review && <p><strong>Review:</strong> {book.review}</p>}
 
-      <div className="actions"> {/* Added actions div */}
+      <div className="actions">
         <button onClick={() => onEdit(book)}>Edit</button>
-        <button onClick={() => onDelete(book.id)} className="delete-btn">Delete</button> {/* Added delete-btn class */}
+        <button onClick={() => onDelete(book.id)} className="delete-btn">Delete</button> 
       </div>
     </div>
   );

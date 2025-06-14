@@ -1,11 +1,10 @@
-// src/components/Footer.js
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeContext } from '../App'; // To conditionally style if needed
+import { ThemeContext } from '../App';
 import './Footer.css';
 
 function Footer() {
-  const { darkMode } = useContext(ThemeContext); // Use theme context if desired
+  const { darkMode } = useContext(ThemeContext);
 
   return (
     <footer className={`app-footer ${darkMode ? 'dark' : ''}`}>
@@ -36,7 +35,7 @@ function Footer() {
         <div className="footer-section social-links">
           <h4>Connect</h4>
           <div className="social-icons">
-            {/* Replace with actual social media icons if you have them */}
+            
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>

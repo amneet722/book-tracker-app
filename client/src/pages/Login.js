@@ -1,18 +1,14 @@
-// client/src/pages/Login.js
 import React, { useState, useContext } from 'react';
 import axios from '../api';
 import { useNavigate, Link } from 'react-router-dom';
-import { ThemeContext } from '../App'; // Import ThemeContext if needed for specific logic (not styling here)
-import './Auth.css'; // Make sure Auth.css is imported
+import { ThemeContext } from '../App';
+import './Auth.css';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-
-  // You can use ThemeContext here if needed for login form specific dark mode adjustments
-  // const { darkMode } = useContext(ThemeContext);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -28,13 +24,13 @@ function Login() {
   };
 
   return (
-    <div className="main-content"> {/* Ensure main-content wrapper is still here from App.js */}
+    <div className="main-content">
       <div className="auth-container">
         <h2>Login</h2>
         <form onSubmit={handleLogin}>
           {error && <p className="error-message">{error}</p>}
 
-          <div className="auth-form-group"> {/* Added for consistent spacing */}
+          <div className="auth-form-group">
             <label htmlFor="email">Email</label>
             <input
               type="email"
@@ -43,11 +39,11 @@ function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              autoComplete="email" /* Added for autocomplete */
+              autoComplete="email"
             />
           </div>
 
-          <div className="auth-form-group"> {/* Added for consistent spacing */}
+          <div className="auth-form-group">
             <label htmlFor="password">Password</label>
             <input
               type="password"
@@ -56,7 +52,7 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              autoComplete="current-password" /* Added for autocomplete */
+              autoComplete="current-password"
             />
           </div>
 

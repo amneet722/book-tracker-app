@@ -1,11 +1,9 @@
-// src/api.js
 import axios from 'axios';
 
 const API = axios.create({
   baseURL: 'http://localhost:5000/api',
 });
 
-// Attach token to requests
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
@@ -14,14 +12,13 @@ API.interceptors.request.use((config) => {
   return config;
 });
 
-// Handle expired token
 API.interceptors.response.use(
   (response) => response,
   (error) => {
     const status = error.response?.status;
     if (status === 401 || status === 403) {
-      localStorage.removeItem('token'); // Clear expired token
-      window.location.href = '/login'; // Force logout
+      localStorage.removeItem('token'); 
+      window.location.href = '/login'; 
     }
     return Promise.reject(error);
   }

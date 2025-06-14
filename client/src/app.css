@@ -1,37 +1,33 @@
-/* client/src/app.css */
-
-/* Define CSS Variables for Colors (Light Mode Defaults) */
 :root {
-  --primary-color: #3498db;          /* A vibrant blue for actions */
+  --primary-color: #3498db;         
   --primary-hover-color: #217dbb;
-  --secondary-color: #2ecc71;        /* A complementary green */
+  --secondary-color: #2ecc71;        
   --secondary-hover-color: #27ae60;
-  --bg-light: #f8f9fa;               /* Light background for general elements */
-  --bg-extra-light: #ffffff;         /* White background for cards/forms */
-  --text-dark: #34495e;              /* Dark text for headings/body */
-  --text-medium: #555;               /* Medium gray for descriptions */
-  --text-light: #7f8c8d;             /* Light gray for subtle text */
-  --border-color: #e0e0e0;           /* Soft border color */
-  --shadow-color: rgba(0, 0, 0, 0.08); /* Subtle shadow */
-  --navbar-bg: #2c3e50;              /* Dark blue/grey for navbar */
-  --footer-bg: #2c3e50;              /* Dark blue/grey for footer */
-  --navbar-text: #ecf0f1;            /* Light text for navbar */
-  --danger-color: #e74c3c;           /* Red for delete/danger */
+  --bg-light: #f8f9fa;              
+  --bg-extra-light: #ffffff;         
+  --text-dark: #34495e;              
+  --text-medium: #555;              
+  --text-light: #7f8c8d;            
+  --border-color: #e0e0e0;          
+  --shadow-color: rgba(0, 0, 0, 0.08); 
+  --navbar-bg: #2c3e50;            
+  --footer-bg: #2c3e50;             
+  --navbar-text: #ecf0f1;           
+  --danger-color: #e74c3c;          
   --danger-hover-color: #c0392b;
 }
 
-/* Dark Mode Variables */
 body.dark {
-  --primary-color: #9b59b6;          /* Purple for primary in dark mode */
+  --primary-color: #9b59b6;         
   --primary-hover-color: #8e44ad;
-  --secondary-color: #2ecc71;        /* Green can remain versatile */
+  --secondary-color: #2ecc71;       
   --secondary-hover-color: #27ae60;
-  --bg-light: #2c3e50;               /* Darker background for general elements */
-  --bg-extra-light: #1a202c;         /* Even darker for cards/forms */
-  --text-dark: #ecf0f1;              /* Light text for headings/body */
-  --text-medium: #bdc3c7;            /* Medium light gray */
-  --text-light: #95a5a6;             /* Lighter gray for subtle text */
-  --border-color: #3e5064;           /* Darker border color */
+  --bg-light: #2c3e50;               
+  --bg-extra-light: #1a202c;       
+  --text-dark: #ecf0f1;        
+  --text-medium: #bdc3c7; 
+  --text-light: #95a5a6;   
+  --border-color: #3e5064;
   --shadow-color: rgba(0, 0, 0, 0.3);
   --navbar-bg: #1a202c;
   --footer-bg: #1a202c;
@@ -40,7 +36,6 @@ body.dark {
   --danger-hover-color: #a52a22;
 }
 
-/* Global Resets & Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -52,26 +47,23 @@ html, body, #root, .app-container {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--text-dark); /* Use variable */
+  color: var(--text-dark);
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--bg-light); /* Use variable */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+  background-color: var(--bg-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Main content wrapper */
 .main-content {
   flex-grow: 1;
-  padding: 2rem 1rem; /* Consistent padding */
-  background-color: var(--bg-light); /* Ensure it matches body or is slightly different */
-  /* REMOVE temporary lightblue background from here after testing */
+  padding: 2rem 1rem; 
+  background-color: var(--bg-light);
 }
 
-/* General Button Styles */
 .btn {
   padding: 0.75rem 1.5rem;
   border: none;
@@ -87,7 +79,7 @@ body {
 
 .btn.primary-btn {
   background-color: var(--primary-color);
-  color: var(--navbar-text); /* White text for primary button */
+  color: var(--navbar-text); 
 }
 
 .btn.primary-btn:hover {
@@ -102,7 +94,7 @@ body {
 }
 
 .btn.secondary-btn:hover {
-  background-color: rgba(var(--primary-color), 0.1); /* Subtle background on hover */
+  background-color: rgba(var(--primary-color), 0.1);
   transform: translateY(-1px);
 }
 
@@ -115,8 +107,6 @@ body {
   background-color: var(--danger-hover-color);
 }
 
-
-/* Form Inputs and Selects */
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -153,12 +143,10 @@ select:focus {
 .mb-4 { margin-bottom: 2rem; }
 .p-2 { padding: 1rem; }
 
-/* Scrollbar (can keep existing if preferred) */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 10px; }
-body.dark ::-webkit-scrollbar-thumb { background-color: #4a4a5a; } /* Darker scrollbar for dark mode */
+body.dark ::-webkit-scrollbar-thumb { background-color: #4a4a5a; } 
 
-/* Temporary class for form close button - ensure it's here */
 .form-close-btn {
   background: none;
   border: none;
@@ -167,14 +155,10 @@ body.dark ::-webkit-scrollbar-thumb { background-color: #4a4a5a; } /* Darker scr
   position: absolute;
   top: 10px;
   right: 15px;
-  color: var(--text-light); /* Use variable */
+  color: var(--text-light); 
   transition: color 0.2s ease;
 }
 
 .form-close-btn:hover {
-  color: var(--text-dark); /* Use variable */
+  color: var(--text-dark);
 }
-
-/* Ensure these are removed after confirming layout */
-/* .app-container { background-color: lightcoral !important; } */
-/* .main-content { background-color: lightblue !important; } */

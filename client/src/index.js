@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // Correct import for React 18+
+import ReactDOM from 'react-dom/client';
 import App from './App';
-import './app.css'; // Assuming you want global styles loaded here
+import './app.css'; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

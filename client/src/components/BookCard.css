@@ -19,7 +19,7 @@
 .book-card .actions {
   margin-top: 1rem;
   display: flex;
-  gap: 0.5rem; /* Better for spacing buttons */
+  gap: 0.5rem; 
 }
 
 .book-card button {
@@ -29,16 +29,15 @@
   cursor: pointer;
   background-color: #2d6cdf;
   color: white;
-  transition: background-color 0.2s ease-in-out; /* Smooth transition */
+  transition: background-color 0.2s ease-in-out;
 }
 
 .book-card button:hover {
   background-color: #1b4eb1;
 }
 
-/* Specific styling for delete button */
 .book-card .actions .delete-btn {
-  background-color: #dc3545; /* Red for delete */
+  background-color: #dc3545;
 }
 
 .book-card .actions .delete-btn:hover {

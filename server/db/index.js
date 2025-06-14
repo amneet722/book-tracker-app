@@ -2,10 +2,9 @@ const { Pool } = require('pg');
 const dotenv = require('dotenv');
 dotenv.config();
 
-// Use object config to avoid special character issues in password
 const pool = new Pool({
-  user: process.env.DB_USER || 'postgres', // Use env var
-  password: process.env.DB_PASSWORD,       // Use env var
+  user: process.env.DB_USER || 'postgres', 
+  password: process.env.DB_PASSWORD,      
   host: process.env.DB_HOST || 'localhost',
   port: process.env.DB_PORT || 5432,
   database: process.env.DB_DATABASE || 'booktracker',
@@ -15,7 +14,6 @@ const connectDB = async () => {
   try {
     await pool.connect();
     console.log('✅ PostgreSQL connected');
-    // Optional: Create tables if they don't exist
     await pool.query(`
       CREATE TABLE IF NOT EXISTS users (
         id SERIAL PRIMARY KEY,

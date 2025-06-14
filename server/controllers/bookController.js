@@ -1,12 +1,10 @@
-// server/controllers/bookController.js
-const pool = require('../db'); // Assuming pool is your DB connection
-const { getBooksByUser, addBook, updateBookById, deleteBookById } = require('../models/Book'); // Assuming these are in Book.js
+const pool = require('../db');
+const { getBooksByUser, addBook, updateBookById, deleteBookById } = require('../models/Book');
 
-// GET all books for the logged-in user
 const getAllBooks = async (req, res) => {
   try {
-    const userId = req.user.id; // Get user ID from authenticated request
-    const books = await getBooksByUser(userId); // Fetch books by user ID
+    const userId = req.user.id;
+    const books = await getBooksByUser(userId); 
     res.json(books);
   } catch (err) {
     console.error('Error fetching books:', err);
@@ -14,12 +12,11 @@ const getAllBooks = async (req, res) => {
   }
 };
 
-// POST new book for the logged-in user
 const createBook = async (req, res) => {
   const { title, author, status, rating, review } = req.body;
-  const userId = req.user.id; // Get user ID from authenticated request
+  const userId = req.user.id;
   try {
-    const newBook = await addBook(userId, { title, author, status, rating, review }); // Pass user ID
+    const newBook = await addBook(userId, { title, author, status, rating, review });
     res.status(201).json(newBook);
   } catch (err) {
     console.error('Error adding book:', err);
@@ -27,13 +24,11 @@ const createBook = async (req, res) => {
   }
 };
 
-// PUT update book for the logged-in user
 const updateBook = async (req, res) => {
-  const { id } = req.params; // Book ID
+  const { id } = req.params;
   const { title, author, status, rating, review } = req.body;
-  const userId = req.user.id; // Get user ID from authenticated request
+  const userId = req.user.id;
   try {
-    // You'll need a model function like updateBookById that also checks user_id
     const updatedBook = await updateBookById(id, userId, { title, author, status, rating, review });
     if (!updatedBook) {
       return res.status(404).json({ error: 'Book not found or unauthorized' });
@@ -45,17 +40,15 @@ const updateBook = async (req, res) => {
   }
 };
 
-// DELETE book for the logged-in user
 const deleteBook = async (req, res) => {
-  const { id } = req.params; // Book ID
-  const userId = req.user.id; // Get user ID from authenticated request
+  const { id } = req.params;
+  const userId = req.user.id; 
   try {
-    // You'll need a model function like deleteBookById that also checks user_id
     const deleted = await deleteBookById(id, userId);
     if (!deleted) {
       return res.status(404).json({ error: 'Book not found or unauthorized' });
     }
-    res.status(204).send(); // No content for successful deletion
+    res.status(204).send();
   } catch (err) {
     console.error('Error deleting book:', err);
     res.status(500).json({ error: 'Failed to delete book' });

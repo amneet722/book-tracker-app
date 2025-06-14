@@ -1,12 +1,11 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const { createUser, findUserByEmail, findUserById } = require('../models/User'); // Import findUserById
+const { createUser, findUserByEmail, findUserById } = require('../models/User'); 
 
 const register = async (req, res) => {
   try {
     const { name, username, email, password } = req.body;
 
-    // Input validation
     if (!name || !username || !email || !password) {
       return res.status(400).json({ error: 'All fields are required' });
     }
@@ -18,7 +17,7 @@ const register = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const user = await createUser(name, username, email, hashedPassword); // createUser now returns id, name, username, email
+    const user = await createUser(name, username, email, hashedPassword);
 
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
       expiresIn: '7d',
@@ -79,7 +78,7 @@ const login = async (req, res) => {
 
 const getMe = async (req, res) => {
   try {
-    const user = await findUserById(req.user.id); // req.user.id set by authMiddleware
+    const user = await findUserById(req.user.id); 
     if (!user) {
       return res.status(404).json({ error: 'User not found' });
     }

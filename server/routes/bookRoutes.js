@@ -1,4 +1,4 @@
-// server/routes/bookRoutes.js
+
 const express = require('express');
 const router = express.Router();
 const {
@@ -7,12 +7,12 @@ const {
   updateBook,
   deleteBook
 } = require('../controllers/bookController');
-const authMiddleware = require('../middleware/authMiddleware'); // Import middleware
+const authMiddleware = require('../middleware/authMiddleware'); 
 
-// Protect all book routes
-router.get('/', authMiddleware, getAllBooks); // ADD authMiddleware
-router.post('/', authMiddleware, createBook); // ADD authMiddleware
-router.put('/:id', authMiddleware, updateBook); // ADD authMiddleware
-router.delete('/:id', authMiddleware, deleteBook); // ADD authMiddleware
+
+router.get('/', authMiddleware, getAllBooks); 
+router.post('/', authMiddleware, createBook);  
+router.put('/:id', authMiddleware, updateBook); 
+router.delete('/:id', authMiddleware, deleteBook); 
 
 module.exports = router;

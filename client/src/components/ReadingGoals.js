@@ -1,12 +1,11 @@
-// src/components/ReadingGoals.js
-import React, { useState } from 'react'; // No useEffect needed if books are props
+import React, { useState } from 'react'; 
 import {
   PieChart, Pie, Cell,
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer
 } from 'recharts';
-import '../pages/Dashboard.css'; // Use dashboard styles for overall container
+import '../pages/Dashboard.css'; 
 
-const COLORS = ['#2ecc71', '#e74c3c', '#f1c40f', '#3498db', '#9b59b6']; // More colors
+const COLORS = ['#2ecc71', '#e74c3c', '#f1c40f', '#3498db', '#9b59b6']; 
 
 const ReadingGoals = ({ books }) => {
   const [goal, setGoal] = useState(10);
@@ -37,7 +36,7 @@ const ReadingGoals = ({ books }) => {
   }));
 
   return (
-    <div className="reading-goals-stats-container"> {/* Container for goals and stats */}
+    <div className="reading-goals-stats-container"> 
       <div className="goal-input-section">
         <label>
           Set Annual Goal:
@@ -46,25 +45,25 @@ const ReadingGoals = ({ books }) => {
             value={goal}
             onChange={(e) => setGoal(Math.max(1, parseInt(e.target.value) || 0))}
             min="1"
-            className="goal-input" /* Added class for styling */
+            className="goal-input"
           />
         </label>
       </div>
 
-      <div className="charts-wrapper"> {/* Flex container for the two charts */}
+      <div className="charts-wrapper"> 
         <div className="chart-card">
           <h3>📘 Goal Completion</h3>
-          <p className="chart-info">{totalRead} of {goal} books read</p> {/* Central info */}
-          <ResponsiveContainer width="100%" height={250}> {/* Adjusted height slightly */}
+          <p className="chart-info">{totalRead} of {goal} books read</p>
+          <ResponsiveContainer width="100%" height={250}>
             <PieChart>
               <Pie
                 data={pieData}
                 cx="50%"
                 cy="50%"
-                outerRadius={80} /* Slightly smaller radius */
+                outerRadius={80} 
                 label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
                 dataKey="value"
-                fill="#8884d8" /* Default fill for the pie */
+                fill="#8884d8" 
               >
                 {pieData.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -77,9 +76,9 @@ const ReadingGoals = ({ books }) => {
 
         <div className="chart-card">
           <h3>📚 Status Breakdown</h3>
-          <ResponsiveContainer width="100%" height={250}> {/* Adjusted height slightly */}
+          <ResponsiveContainer width="100%" height={250}>
             <BarChart data={barData}>
-              <XAxis dataKey="name" stroke="var(--text-medium)" /> {/* Use color variable */}
+              <XAxis dataKey="name" stroke="var(--text-medium)" />
               <YAxis allowDecimals={false} stroke="var(--text-medium)" />
               <Tooltip />
               <Bar dataKey="value" fill="var(--primary-color)" radius={[4, 4, 0, 0]}>

@@ -1,13 +1,11 @@
-// src/pages/Dashboard.js
 import React, { useState, useEffect, useReducer } from 'react';
-import axios from '../api'; // Your axios instance with auth interceptor
+import axios from '../api'; 
 import BookForm from '../components/BookForm';
 import BookCard from '../components/BookCard';
 import ReadingGoals from '../components/ReadingGoals';
 import ReadingStats from '../components/ReadingStats';
 import './Dashboard.css';
 
-// Reducer for book state
 const bookReducer = (state, action) => {
   switch (action.type) {
     case 'FETCH_START':
@@ -49,17 +47,15 @@ function Dashboard() {
   const [showForm, setShowForm] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredStatus, setFilteredStatus] = useState('All');
-  const [user, setUser] = useState(null); // State for user data
+  const [user, setUser] = useState(null); 
 
-  // Function to fetch user data
+  
   const fetchUserData = async () => {
     try {
-      const res = await axios.get('/auth/me'); // Call the /auth/me endpoint
+      const res = await axios.get('/auth/me'); 
       setUser(res.data);
     } catch (err) {
       console.error('Failed to fetch user data:', err);
-      // The API interceptor should handle token expiry/invalidity,
-      // but you can add specific error handling here if needed.
     }
   };
 
@@ -74,7 +70,7 @@ function Dashboard() {
   };
 
   useEffect(() => {
-    fetchUserData(); // Fetch user data when component mounts
+    fetchUserData();
     fetchBooks();
   }, []);
 
@@ -92,11 +88,9 @@ function Dashboard() {
     dispatch({ type: 'CLEAR_ERROR' });
     try {
       if (id) {
-        // Update existing book
         const res = await axios.put(`/books/${id}`, bookData);
         dispatch({ type: 'UPDATE_BOOK', payload: res.data });
       } else {
-        // Add new book
         const res = await axios.post('/books', bookData);
         dispatch({ type: 'ADD_BOOK', payload: res.data });
       }
@@ -138,7 +132,7 @@ function Dashboard() {
 
         <input
           type="text"
-          placeholder="Search by title or author..." // Corrected: Comment removed from here
+          placeholder="Search by title or author..." 
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />

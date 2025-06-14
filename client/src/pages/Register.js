@@ -1,9 +1,8 @@
-// client/src/pages/Register.js
 import React, { useState, useContext } from 'react';
 import axios from '../api';
 import { useNavigate, Link } from 'react-router-dom';
-import { ThemeContext } from '../App'; // Import ThemeContext
-import './Auth.css'; // Make sure Auth.css is imported
+import { ThemeContext } from '../App';
+import './Auth.css'; 
 
 function Register() {
   const [name, setName] = useState('');

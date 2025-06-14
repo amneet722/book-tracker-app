@@ -1,4 +1,3 @@
-// src/components/ReadingStats.js
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import {
@@ -9,7 +8,7 @@ import {
   Tooltip,
   Legend
 } from 'chart.js';
-import '../pages/Dashboard.css'; // Ensure dashboard styles are imported
+import '../pages/Dashboard.css';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
@@ -27,15 +26,15 @@ const ReadingStats = ({ books }) => {
           countByStatus('Currently Reading'),
           countByStatus('Read')
         ],
-        backgroundColor: ['#f39c12', '#3498db', '#2ecc71'], /* Specific colors for bars */
-        borderRadius: 8, /* Rounded bars */
+        backgroundColor: ['#f39c12', '#3498db', '#2ecc71'],
+        borderRadius: 8,
       }
     ]
   };
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false, /* Allow more control over height */
+    maintainAspectRatio: false,
     plugins: {
       legend: { display: false },
       tooltip: { enabled: true }
@@ -45,27 +44,27 @@ const ReadingStats = ({ books }) => {
         beginAtZero: true,
         ticks: {
           stepSize: 1,
-          color: 'var(--text-medium)', /* Use variable for tick labels */
+          color: 'var(--text-medium)',
         },
         grid: {
-          color: 'var(--border-color)', /* Use variable for grid lines */
+          color: 'var(--border-color)', 
         }
       },
       x: {
         ticks: {
-          color: 'var(--text-medium)', /* Use variable for tick labels */
+          color: 'var(--text-medium)', 
         },
         grid: {
-          display: false, /* Remove x-axis grid lines */
+          display: false,
         }
       }
     }
   };
 
   return (
-    <div className="reading-stats-chart"> {/* Added class for styling */}
-      <h3 className="stats-chart-title">Book Status Overview</h3> {/* Added class for title */}
-      <div style={{ height: '300px', width: '100%' }}> {/* Wrapper to control chart size */}
+    <div className="reading-stats-chart">
+      <h3 className="stats-chart-title">Book Status Overview</h3> 
+      <div style={{ height: '300px', width: '100%' }}> 
         <Bar data={data} options={options} />
       </div>
     </div>

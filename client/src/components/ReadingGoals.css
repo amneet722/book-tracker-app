@@ -65,10 +65,9 @@
   color: var(--text-medium);
 }
 
-/* For Recharts labels/text (if needed to override default colors) */
 .recharts-text.recharts-pie-label-text,
 .recharts-legend-item-text {
-  fill: var(--text-dark) !important; /* Force text color for charts */
+  fill: var(--text-dark) !important;
 }
 
 @media (max-width: 768px) {

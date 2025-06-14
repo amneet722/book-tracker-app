@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="brand">📖 Book Tracker</Link> {/* Changed className to brand */}
+      <Link to="/" className="brand">📖 Book Tracker</Link>
 
       <div className="nav-links">
         {isLoggedIn ? (

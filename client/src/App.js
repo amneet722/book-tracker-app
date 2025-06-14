@@ -25,7 +25,6 @@ function App() {
   return (
     <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
       <BrowserRouter>
-        {/* ADD THIS WRAPPER DIV */}
         <div className="app-container">
           <Navbar />
           <div className="main-content">
@@ -33,7 +32,6 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              {/* THIS IS THE CRITICAL CHANGE: Pass Dashboard as a child to PrivateRoute */}
               <Route
                 path="/dashboard"
                 element={
@@ -42,14 +40,12 @@ function App() {
                   </PrivateRoute>
                 }
               />
-              {/* Add placeholder routes for legal pages for now */}
               <Route path="/privacy-policy" element={<div style={{padding: '2rem', textAlign: 'center'}}><h2>Privacy Policy</h2><p>This is a placeholder for the privacy policy.</p></div>} />
               <Route path="/terms-of-service" element={<div style={{padding: '2rem', textAlign: 'center'}}><h2>Terms of Service</h2><p>This is a placeholder for the terms of service.</p></div>} />
             </Routes>
           </div>
           <Footer />
         </div>
-        {/* END WRAPPER DIV */}
       </BrowserRouter>
     </ThemeContext.Provider>
   );

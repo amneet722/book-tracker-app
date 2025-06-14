@@ -27,5 +27,5 @@ const findUserById = async (id) => {
 module.exports = {
   createUser,
   findUserByEmail,
-  findUserById // New export
+  findUserById 
 };
